@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Featured from './components/Featured';
+import Header from './components/Header';
+import { Navbar } from './components/Navbar';
+import { Container } from './styles/App.style';
+import axios from 'axios';
+import { createContext, useEffect, useState } from 'react';
+export const Context = createContext([]);
 
 function App() {
+  const [apiData, setApiData] = useState([]);
+
+  const fetchData = async () => {
+    const url = 'https://api.npoint.io/f89acb9ee900ca95b8dc';
+    await axios.get(url)
+      .then((res) => setApiData(res.data))
+      .catch((err) => alert('server error', err))
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, [])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Header />
+      <Context.Provider value={apiData}>
+        <Container>
+          <Featured />
+        </Container>
+      </Context.Provider>
+
+    </>
+
   );
 }
 
