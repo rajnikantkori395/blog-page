@@ -1,18 +1,17 @@
 
 import { Banner, BannerImage, Button, NavButton, Row, Row1, SearchBar, SearchInput } from '../styles/Header.style';
-
+import banner from '../assets/banner.png'
 const Header = () => {
 
-   
     const backgroundColor = '#0a9e88';
     return <>
         <Banner>
 
             <Row1>
                 <h1>Blogs</h1>
-                <BannerImage />
+                <BannerImage src={banner} />
                 <SearchBar>
-                    <SearchInput type='text' placeholder='search' /><Button>Search</Button>
+                <SearchInput type='text' placeholder='search' /><Button>Search</Button>
                 </SearchBar>
             </Row1>
         </Banner>

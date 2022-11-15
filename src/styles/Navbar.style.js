@@ -58,6 +58,12 @@ export const Logo = styled.img`
     margin: 10px;
     max-width: 80px;
     height: auto;
+    @media (max-width:768px) {
+        border: 1px solid white;
+        border-radius: 50%;
+        max-width: 40px;
+        padding: 2% 0;
+    }
 `;
 export const OpenLinkButtons = styled.button`
 padding-right: -50%;
