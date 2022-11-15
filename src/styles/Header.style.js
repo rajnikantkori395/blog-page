@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 export const Banner = styled.section`
@@ -24,9 +25,12 @@ flex-direction: column;
 align-items: center;
 justify-content: space-evenly;
 margin-bottom: 3rem;
+& h1{
+  font-size: 25pt;
+  font-style: oblique;
+}
 @media (max-width:768px) {
   padding: 0%;
-
 }
 `;
 
@@ -71,6 +75,7 @@ export const Button = styled.button`
     height: auto;
     font-size: 13px;
     display:none;
+  }
 `;
 export const SearchBar = styled.div`
 margin-top: -1.5em;
@@ -86,7 +91,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 `;
 
-export const NavButton = styled.button`
+export const NavButton = styled(Link)`
  ${props => props.primary && css`
     background: #0a9e88;
     color: white;
@@ -95,6 +100,22 @@ export const NavButton = styled.button`
     background: transparent;
     color: #045d51;
   `}
+  text-decoration:none;
+  cursor: pointer;
+  border: 2px solid #0a9e88;
+  border-radius: 10pt;
+  margin: 0.5em 1em;
+  padding: 0.6em 2em;
+  font-size: 13pt;
+  @media (max-width:768px) {
+  font-size: 13px;
+  padding: 3px 7px;
+  margin:0;
+}
+`;
+export const MoreButton = styled.button`
+  background: #0a9e88;
+  color: white;
   cursor: pointer;
   border: 2px solid #0a9e88;
   border-radius: 10pt;

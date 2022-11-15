@@ -14,4 +14,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 height:80vh;
+color: #033d35;
 `;
+

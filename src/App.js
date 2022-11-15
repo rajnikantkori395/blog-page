@@ -10,12 +10,13 @@ import Latest from './components/Latest';
 import Trending from './components/Trending';
 import Footer from './components/Footer';
 import Backpacking from './components/Backpacking';
-export const Context = createContext([]);
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import LoadMore from './components/LoadMore';
+export const Context = createContext();
 
 function App() {
   const [apiData, setApiData] = useState([]);
   const [loading, setLoading] = useState(true);
-
   const fetchData = async () => {
     const url = 'https://api.npoint.io/f89acb9ee900ca95b8dc';
     await axios.get(url)
@@ -24,34 +25,36 @@ function App() {
         setLoading(false);
       })
       .catch((err) => alert('server error', err))
-
   }
 
   useEffect(() => {
     fetchData();
-
   }, [])
-  console.log(apiData);
 
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
       {
         loading ? <Loading><h1>Loading...</h1></Loading> :
           <>
-            <Header />
             <Context.Provider value={apiData}>
+              <Header />
               <Container>
+                <Routes>
+                  <Route path='/:slug' element={<Backpacking />} />
+                </Routes>
                 <Featured />
                 <Latest />
                 <Trending />
-                <Backpacking/>
+                <LoadMore/>
               </Container>
             </Context.Provider>
-            <Footer/>
+            <Footer />
           </>
       }
-    </>
+
+    </BrowserRouter>
+
   );
 }
 

@@ -7,7 +7,7 @@ color: #045d51;
 `;
 
 export const Heading = styled.h1`
-  font-size: 30pt;
+  font-size: 25pt;
 `;
 
 export const FImage = styled.img`

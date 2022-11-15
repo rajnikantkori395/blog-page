@@ -5,18 +5,21 @@ import { faEye, faShareNodes, faArrowRight, faArrowLeft } from '@fortawesome/fre
 import { LeftContainer, LImage, Row2, Row3 } from '../styles/Latest.style';
 import { Context } from '../App';
 import { Button, Section, Row4, NavButton2 } from '../styles/Pagination.style';
+import { useLocation, useParams } from 'react-router-dom';
 
 const Backpacking = () => {
     const apiData = useContext(Context);
     const [filterData, setFilterData] = useState([]);
+    const { slug } = useParams();
+    const [heading, setHeading] = useState(slug);
 
-    
+
     function getData() {
         let temp = [];
         let i = 0;
         for (let e of apiData) {
             if (e.categories[i] != null) {
-                if (e.categories[i].slug === 'backpacking')
+                if (e.categories[i].slug === slug)
                     temp.push(e);
                 i++;
             } else {
@@ -26,8 +29,9 @@ const Backpacking = () => {
         return setFilterData(temp);
     }
     useEffect(() => {
+        setHeading(slug);
         getData();
-    }, []);
+    }, [slug]);
 
     // pagination.........
     const [currentPage, setCurrentPage] = useState(1);
@@ -49,7 +53,7 @@ const Backpacking = () => {
         return (<>
             <Section>
                 <Button disabled={currentPage === 1 ? true : false} onClick={decrement}><FontAwesomeIcon icon={faArrowLeft} /> </Button>
-                <Button disabled={currentPage === Math.floor(filterData.length/2) ? true : false} onClick={increment}><FontAwesomeIcon icon={faArrowRight} /> </Button>
+                <Button disabled={currentPage === Math.floor(filterData.length / 2) ? true : false} onClick={increment}><FontAwesomeIcon icon={faArrowRight} /> </Button>
             </Section>
             <Row4>
                 <NavButton2 onClick={seeMore}>See More</NavButton2>
@@ -62,7 +66,7 @@ const Backpacking = () => {
         <>
             <Row>
                 <Hr marginright={true} />
-                <Heading>Backpacking Trips</Heading>
+                <Heading>{heading}</Heading>
                 <Hr marginleft={true} />
             </Row>
             <Row2 spaceBetween>

@@ -26,15 +26,9 @@ width: 100%;
 
 }
 `;
-// export const RightContainer = styled.div`
-// display: flex;
-// width: 48%;
-// flex-direction: column;
-// `;
 export const LImage = styled.img`
 height: 50%;
 width: 100%;
-
 `;
 
 
