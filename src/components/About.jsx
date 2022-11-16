@@ -5,13 +5,15 @@ const About = () => {
     return (
         <Section2>
             <Box>
-                <BoxTitle>About Us</BoxTitle>
-                <BoxDesc>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora non quod
-                    accusamus necessitatibus molestias laboriosam nostrum, blanditiis nesciunt adipisci, perferendis et ipsa
-                    autem labore corrupti, quae voluptatibus nam? Sit facere consequatur neque expedita architecto quibusdam
-                    at delectus sequi fugiat.
-                </BoxDesc>
+                <List>
+                    <BoxTitle>About Us</BoxTitle>
+                    <BoxDesc>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora non quod
+                        accusamus necessitatibus molestias laboriosam nostrum, blanditiis nesciunt adipisci, perferendis et ipsa
+                        autem labore corrupti, quae voluptatibus nam? Sit facere consequatur neque expedita architecto quibusdam
+                        at delectus sequi fugiat.
+                    </BoxDesc>
+                </List>
             </Box>
             <hr />
             <Box>
@@ -40,13 +42,13 @@ const About = () => {
                     </BoxDesc>
                     <BoxTitle>Blogs</BoxTitle>
                     <BoxDesc>
-                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, ad.
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, ad.
                     </BoxDesc>
                 </List>
             </Box>
             <hr />
             <Box>
-            <List>
+                <List>
                     <BoxTitle>Quick Links</BoxTitle>
                     <BoxDesc>
                         <li>Privacy Policy</li>
@@ -55,7 +57,7 @@ const About = () => {
                         <li>Disclaimer</li>
                         <li>About Us</li>
                     </BoxDesc>
-                    </List>
+                </List>
             </Box>
 
         </Section2>

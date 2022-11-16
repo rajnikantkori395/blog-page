@@ -35,8 +35,8 @@ border-radius: 10pt;
 padding: 0.2em 1em;
 font-size: 13pt;
 @media (max-width:768px) {
-font-size: 13px;
-margin:2px;
+font-size: 11px;
+margin:1px;
 }
 `;
 

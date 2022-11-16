@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 export const FootSection = styled.div`
 display: flex;
 flex-direction: column;
-border: 1px solid;
 align-items: center;
 @media (max-width:768px) {
     width: auto;
@@ -17,6 +16,7 @@ ${props=> props.contacts && css`
          padding: 0 3.2em;
       }
    `}
+
    width: fit-content;
    display: inline-flex;
    text-align: center;
@@ -29,6 +29,7 @@ ${props=> props.contacts && css`
          color: #2F3331;
          font-weight: bold;
          padding: 0;
+         font-size: small;
       }
    `}
 }
