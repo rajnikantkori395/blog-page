@@ -8,6 +8,9 @@ color: #045d51;
 
 export const Heading = styled.h1`
   font-size: 25pt;
+  @media (max-width:768px) {
+    font-size: 15pt;
+  }
 `;
 
 export const FImage = styled.img`
