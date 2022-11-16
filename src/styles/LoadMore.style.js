@@ -17,7 +17,8 @@ export const LoadButton = styled.button`
   font-size: 13pt;
   @media (max-width:768px) {
   font-size: 13px;
-  padding: 3px 7px;
   margin:0;
+  padding: 2% 20%;
+  background-color: #045d51;
 }
 `;

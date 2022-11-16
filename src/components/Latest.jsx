@@ -9,7 +9,7 @@ import { Button, NavButton2, Row4, Section } from '../styles/Pagination.style';
 const Latest = () => {
     const apiData = useContext(Context);
     const tempData = apiData.sort((a, b) => new Date(b) - new Date(a)).slice(0, 20);
-
+    //pagination...
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostPerPage] = useState(2);
     const lastPostIndex = currentPage * postsPerPage;

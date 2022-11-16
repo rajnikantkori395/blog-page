@@ -14,7 +14,7 @@ const Featured = () => {
     const Slides = () => (<Carousel
         center
         infinite
-        showArrows={true}
+        showArrows={true} // you can make this false and see the changes in mobile view
         showIndicator
         // centerPadding={false}
         slidesToShow={1}

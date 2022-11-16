@@ -10,6 +10,12 @@ const Category = ({category, categoryName}) => {
     const apiData = useContext(Context);
     const [filterData, setFilterData] = useState([]);
     const [heading, setHeading] = useState(categoryName);
+    // pagination.........
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostPerPage] = useState(2);
+    const lastPostIndex = currentPage * postsPerPage;
+    const firstPostIndex = lastPostIndex - postsPerPage;
+    const currentPosts = filterData.slice(firstPostIndex, lastPostIndex);
 
     function getData() {
         let temp = [];
@@ -29,14 +35,6 @@ const Category = ({category, categoryName}) => {
         setHeading(categoryName);
         getData();
     }, [category]);
-
-
-    // pagination.........
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostPerPage] = useState(2);
-    const lastPostIndex = currentPage * postsPerPage;
-    const firstPostIndex = lastPostIndex - postsPerPage;
-    const currentPosts = filterData.slice(firstPostIndex, lastPostIndex);
 
     const Pagination = () => {
         const decrement = () => {

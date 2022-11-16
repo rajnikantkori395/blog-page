@@ -10,7 +10,7 @@ const Trending = () => {
     const apiData = useContext(Context);
     const randomIndex = Math.floor(Math.random() * apiData.length);
     const temp = apiData.slice(randomIndex, randomIndex + 20);
-
+    //pagination...
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostPerPage] = useState(2);
     const lastPostIndex = currentPage * postsPerPage;

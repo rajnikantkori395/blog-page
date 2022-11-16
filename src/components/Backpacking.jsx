@@ -5,14 +5,19 @@ import { faEye, faShareNodes, faArrowRight, faArrowLeft } from '@fortawesome/fre
 import { LeftContainer, LImage, Row2, Row3 } from '../styles/Latest.style';
 import { Context } from '../App';
 import { Button, Section, Row4, NavButton2 } from '../styles/Pagination.style';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Backpacking = () => {
     const apiData = useContext(Context);
     const [filterData, setFilterData] = useState([]);
     const { slug } = useParams();
     const [heading, setHeading] = useState(slug);
-
+    // pagination.........
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostPerPage] = useState(2);
+    const lastPostIndex = currentPage * postsPerPage;
+    const firstPostIndex = lastPostIndex - postsPerPage;
+    const currentPosts = filterData.slice(firstPostIndex, lastPostIndex);
 
     function getData() {
         let temp = [];
@@ -32,13 +37,6 @@ const Backpacking = () => {
         setHeading(slug);
         getData();
     }, [slug]);
-
-    // pagination.........
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostPerPage] = useState(2);
-    const lastPostIndex = currentPage * postsPerPage;
-    const firstPostIndex = lastPostIndex - postsPerPage;
-    const currentPosts = filterData.slice(firstPostIndex, lastPostIndex);
 
     const Pagination = () => {
         const decrement = () => {

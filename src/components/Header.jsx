@@ -14,7 +14,6 @@ const Header = () => {
     const firstPostIndex = lastPostIndex - postsPerPage;
     const navButtons = category.slice(firstPostIndex, lastPostIndex);
 
-
     let cat = [];
     function getAllCategory() {
         let i = 0;
@@ -33,7 +32,6 @@ const Header = () => {
         cat = [...new Map(cat.map((item) => [item["name"], item])).values()];  // getting unique categories name
         return setCategory(cat);
     }
-
 
     const MoreButtons = () => {
         const increment = () =>{
