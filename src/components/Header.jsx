@@ -38,7 +38,6 @@ const Header = () => {
     const MoreButtons = () => {
         const increment = () =>{
             setPostPerPage(postsPerPage + 6);
-            console.log('click');
         } 
         return <MoreButton  onClick={increment} primary={backgroundColor}>More</MoreButton>
     }
@@ -62,7 +61,7 @@ const Header = () => {
             {
                 navButtons.length ? navButtons.map((e) => {
                     return <NavButton key={e.id} to={`/${e.category}`} outline={backgroundColor}>{e.name}</NavButton>
-                }) : 'getting navs'
+                }) : 'getting navigations'
             }
             <MoreButtons />
 

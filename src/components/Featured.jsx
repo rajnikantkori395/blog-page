@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import Carousel from 'styled-components-carousel';
 import { FeatureTitle, FImage, Heading, Hr, NavButton, Row, Row1 } from '../styles/Featured.style'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,21 +9,12 @@ const Featured = () => {
     
     const apiData = useContext(Context);
     let randomIndex = Math.floor(Math.random() * apiData.length);
-    const filterData = apiData.slice(randomIndex, randomIndex + 5);
-    const [arrow, setArrow] = useState(true); 
-    const [screenSize,setSize] = useState (window.innerWidth);
-    
-    useEffect(() => {
-        setSize(window.innerWidth)
-        console.log('fet',screenSize);
-      if(screenSize<=768)
-                setArrow(false);
-    })
+    const filterData = apiData.slice(randomIndex, randomIndex + 5);   
     
     const Slides = () => (<Carousel
         center
         infinite
-        showArrows={arrow}
+        showArrows={true}
         showIndicator
         // centerPadding={false}
         slidesToShow={1}

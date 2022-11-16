@@ -22,29 +22,40 @@ const About = () => {
                         <li>Chopta Tungunath</li>
 
                     </BoxDesc>
-
+                    <BoxTitle>Himalayan Escapades</BoxTitle>
+                    <BoxDesc>
+                        <li>Bir Billing</li>
+                        <li>Chopta Tungunath</li>
+                    </BoxDesc>
                 </List>
             </Box>
 
             <hr />
             <Box>
-                <BoxTitle>About</BoxTitle>
-                <BoxDesc>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora non quod
-                    accusamus necessitatibus molestias laboriosam nostrum, blanditiis nesciunt adipisci, perferendis et ipsa
-                    autem labore corrupti, quae voluptatibus nam? Sit facere consequatur neque expedita architecto quibusdam
-                    at delectus sequi fugiat.
-                </BoxDesc>
+                <List>
+                    <BoxTitle>Backpacking Trips</BoxTitle>
+                    <BoxDesc>
+                        <li>Himachal Backpacking</li>
+                        <li>Spiti Valley Trips</li>
+                    </BoxDesc>
+                    <BoxTitle>Blogs</BoxTitle>
+                    <BoxDesc>
+                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, ad.
+                    </BoxDesc>
+                </List>
             </Box>
             <hr />
             <Box>
-                <BoxTitle>About</BoxTitle>
-                <BoxDesc>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora non quod
-                    accusamus necessitatibus molestias laboriosam nostrum, blanditiis nesciunt adipisci, perferendis et ipsa
-                    autem labore corrupti, quae voluptatibus nam? Sit facere consequatur neque expedita architecto quibusdam
-                    at delectus sequi fugiat.
-                </BoxDesc>
+            <List>
+                    <BoxTitle>Quick Links</BoxTitle>
+                    <BoxDesc>
+                        <li>Privacy Policy</li>
+                        <li>Cancellation Policy</li>
+                        <li>Terms & Conditions</li>
+                        <li>Disclaimer</li>
+                        <li>About Us</li>
+                    </BoxDesc>
+                    </List>
             </Box>
 
         </Section2>
