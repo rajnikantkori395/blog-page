@@ -28,7 +28,7 @@ const LoadMore = () => {
                 i = 0;
             }
         }
-        cat = [...new Map(cat.map((item) => [item["name"], item])).values()];
+        cat = [...new Map(cat.map((item) => [item["name"], item])).values()]; // unique values in catgories
         return setCategory(cat);
     }
 
